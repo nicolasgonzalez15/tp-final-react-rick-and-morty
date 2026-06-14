@@ -2,7 +2,7 @@
 Proyecto de React JS utilizando VITE como gestor de dependencias / Typescript y CSS / API de Rick and Morty para recuperar datos de personajes
 
 ## Demo en VERCEL
-https://tp-final-react-rick-and-morty.vercel.app/
+[Página de Personajes de Rick and Morty](https://tp-final-react-rick-and-morty.vercel.app/){:target="_blank"}
 
 ## Propósito del proyecto
 Construir una aplicación que contenga (1ra parte):
