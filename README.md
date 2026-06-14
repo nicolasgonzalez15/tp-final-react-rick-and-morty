@@ -29,54 +29,6 @@ Además de lo solicitado en la primera entrega, este proyecto incluye:
 * Hooks reutilizables en /src/hooks (por ejemplo useCharacters, useHistory, useCharacterDetails).
 * Context para favoritos en /src/context (FavoriteProvider, FavoritesContext).
 
-
-## Directorio de carpetas en SRC
-src/
-├─ pages/
-│  ├─ SearchPage.tsx        # Página principal: input de búsqueda, muestra CharacterGrid y TagHistory
-│  ├─ FavoritePage.tsx      # Página de Favoritos: lista personajes guardados desde el context
-│  ├─ CharacterDetails.tsx  # Página de detalle: muestra atributos completos de un personaje por id
-│  ├─ NotFound.tsx          # Página 404 / error para rutas inválidas o personaje no encontrado
-│
-├─ hooks/
-│  ├─ useCharacters.ts      # Hook para buscar personajes (llama a getCharacters, maneja cache/estado)
-│  ├─ useCharacterDetails.ts# Hook para obtener detalles por id (usa getCharacterById, loading/error)
-│  ├─ useHistory.ts         # (opcional) Hook para manejar busquedas previas / persistencia
-│
-├─ components/
-│  ├─ CharacterGrid.tsx     # Componente que renderiza la grilla; muestra mensaje si búsqueda no retorna resultados
-│  ├─ CharacterCard.tsx     # Card individual del personaje; incluye botón toggle favorito y link a detalles
-│  ├─ InputSearch.tsx       # Componente de búsqueda (input + submit)
-│  ├─ TagHistory.tsx        # Muestra tags de búsquedas previas, permite re-disparar búsqueda
-│  ├─ Pagination.tsx        # Componente de paginación (<<, <, números, >, >>)
-│  ├─ CustomHeader.tsx      # Header de la app
-│  ├─ CustomFooter.tsx      # Footer de la app
-│
-├─ interfaces/
-│  ├─ character.ts          # Interfaz Character usada por la UI (id, name, image, species, status, etc.)
-│  ├─ characterResponse.ts  # Tipado para la respuesta de lista (info + results)
-│  ├─ characterResponseBeta.ts # (existente) tipado alternativo / completo del objeto personaje
-│
-├─ context/
-│  ├─ FavoritesContext.tsx  # createContext con tipos por defecto (favorites, isFavorite, toggleFavorite)
-│  ├─ FavoriteProvider.tsx  # Provider que persiste favorites en localStorage y expone acciones
-│
-├─ services/
-│  ├─ getCharacterService.ts# Funciones para llamar a la API: getCharacters(query, page?) y getCharacterById(id)
-│
-
-## Archivos clave adicionales
-
-- src/CharacterApp.tsx  
-  Componente raíz de la UI: define las Routes (Search, Favoritos, Detalle, 404), muestra la navegación condicional y consume el FavoritesContext. Orquesta la composición de páginas y pasa handlers principales (búsqueda, paginación, historial).
-
-- src/main.tsx  
-  Punto de entrada que monta React en el DOM. Envuelve la app con BrowserRouter y FavoriteProvider (context) y aplica el CSS global. Ejemplo: BrowserRouter > FavoriteProvider > <CharacterApp />.
-
-- src/index.css  
-  Estilos globales y variables CSS. Contiene layout principal, tipografías, reset, estilos para CharacterGrid/CharacterCard, paginación, botones y media queries para responsividad.
-
-
 ## Uso / Desarrollo
 1. Copiar o renombrar `.env.example` a `.env` y configurar:
    VITE_URL_BASE=https://rickandmortyapi.com/api/character
