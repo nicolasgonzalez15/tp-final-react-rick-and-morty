@@ -1,5 +1,5 @@
-# REACT JS/VITE 3F - Trabajo Practico Integrador
-Proyecto de React JS utilizando VITE como gestor de dependencias / Typescript y CSS / API de Rick and Morty para recuperar datos de personajes
+# REACT TS/VITE 3F - Trabajo Practico Integrador
+Proyecto de React TS utilizando VITE como gestor de dependencias / Typescript y CSS / API de Rick and Morty para recuperar datos de personajes
 
 ## Demo en VERCEL
 [Página de Personajes de Rick and Morty](https://tp-final-react-rick-and-morty.vercel.app/)
