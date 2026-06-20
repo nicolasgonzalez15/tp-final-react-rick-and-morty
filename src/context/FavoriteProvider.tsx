@@ -9,12 +9,12 @@ interface Props {
 export const FavoriteProvider = ({children}: Props) => {
 
         const [favorites, setFavorites] = useState<Character[]>(() => {
-            const localData = localStorage.getItem('favorite-gifs');
+            const localData = localStorage.getItem('favorite-characters');
             return localData ? JSON.parse(localData) : [];
         });
     
         useEffect(() => {
-            localStorage.setItem('favorite-gifs', JSON.stringify(favorites));
+            localStorage.setItem('favorite-characters', JSON.stringify(favorites));
         }, [favorites]);
     
         const isFavorite = (id:number) =>{
